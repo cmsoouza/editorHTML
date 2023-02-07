@@ -7,17 +7,21 @@ namespace EditorHtml
     {
         public static void Show()
         {
+            /* Configurações de cores da tela do editor */
+            /* Modo Edição do editor*/
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.WriteLine("MODO EDITOR");
             Console.WriteLine("------------");
+            /* Chamando o metodo start */
             Start();
         }
 
         public static void Start()
         {
+            /*  */
             var file = new StringBuilder();
 
             do
@@ -32,3 +36,14 @@ namespace EditorHtml
         }
     }
 }
+
+/* 
+    Anotações:
+
+    - StringBuilder inicializar novas instancias na string principal.
+    - Na estrutura do stringbuilder cria-se um algoritmo que emquanto
+    o usuario nao clickar a tecla "Esc", ele nao sairá da tela do editor.
+    
+
+
+ */

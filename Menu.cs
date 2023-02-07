@@ -6,19 +6,24 @@ namespace EditorHtml
     {
         public static void show()
         {
+            /* Configuração de cores de fundo do editor */
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.ForegroundColor = ConsoleColor.Black;
 
+            /* Chamando funções */
             DrawScreen();
             WriteOption();
 
+            /* Lendo uma linha com a var (option) */
             var option = short.Parse(Console.ReadLine());
+            /* Passando option para chamada do metodo */
             HandleMenuOption(option);
-        } // metodo para configuração de cores
+        }
 
         public static void DrawScreen()
         {
+            /* 1° for criando colunas */
             Console.Write("+");
             for (int i = 0; i <= 30; i++)
             {
@@ -28,21 +33,23 @@ namespace EditorHtml
             Console.Write("-");
             Console.Write("\n");
 
+            /* 2° Criando as linhas */
             for (int lines = 0; lines <= 10; lines++)
             {
                 Console.Write("|");
                 for (int i = 0; i <= 30; i++)
                 {
-                    Console.Write("-");
+                    Console.Write(" ");
                 }
 
                 Console.Write("+");
                 Console.Write("\n");
             }
-        } // Estrutura de linhas (Desenhando uma tela)
+        }
 
         public static void WriteOption()
         {
+            /* Opções para tela do usuario */
             Console.SetCursorPosition(3, 2);
             Console.WriteLine("EditorHtml");
             Console.SetCursorPosition(3, 3);
@@ -56,11 +63,12 @@ namespace EditorHtml
             Console.SetCursorPosition(3, 9);
             Console.WriteLine("0 - Sair");
             Console.SetCursorPosition(3, 10);
-            Console.WriteLine("Opção: ");
-        } // Escreve opções para usuario
+            Console.Write("Opção: ");
+        }
 
         public static void HandleMenuOption(short option)
         {
+            /* Manipulando as options da tela do usuario */
             switch (option)
             {
                 case 1: Editor.Show(); break;
@@ -75,7 +83,7 @@ namespace EditorHtml
 
                 default: show(); break;
             }
-        } // manipular as opções do nosso editor.
+        }
 
     }
 }
@@ -88,13 +96,16 @@ namespace EditorHtml
     - Foi criado 3 metodos;
         => WriteOption() com algoritmo para escrever opções para usuario.
         => DrawScreen() usando a interação de controle for() cria-se a estrutura
-        de linhas do editor.
+        de linhas do editor. (Desenhando telas)
         => Metodo show() ao qual possui sua chamadas dos metodos abaixo e declarações
         dos cores de fundo e letras.
     - Na class program utilizamos os metodo principal para chamar a class Menu.show para
     acessar as demais funções da aplicação.
     - Para metodo HandleMenuOption vamos manipular as opções do nosso editor.
     - Variavel option criada para armazenar opções do usuario no sistema.
+    - Propriedades do console.brack/fore sao para cores do terminal.
+    - Usando metodo setCursorPosition() ele seta o curso onde queremos que ele fique na tela
+    do editor.
 
 
  */

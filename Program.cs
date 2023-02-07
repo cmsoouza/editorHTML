@@ -14,3 +14,13 @@ namespace EditorHtml
 
 }
 
+
+/* 
+    Anotações:
+
+    - Chamando menu.show em class separada.
+
+
+
+ */
+
